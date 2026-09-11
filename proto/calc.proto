@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package calc;
+
+message CalcRequest {
+    int32  seq      = 1;
+    double operand1 = 2;
+    string op       = 3;
+    double operand2 = 4;
+}
+
+message CalcResponse {
+    int32 seq = 1;
+    oneof result {
+        double value = 2;
+        string error = 3;
+    }
+}
